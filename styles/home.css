@@ -56,6 +56,10 @@ div#home-page form input, form textarea, form select {
     -webkit-appearance: none;
 }
 
+div#home-page form textarea {
+    overflow-y: scroll;
+}
+
 div#home-page form input:focus, form textarea:focus, form select:focus {
     outline: none;
     border: 1px solid #30303055;
