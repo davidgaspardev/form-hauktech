@@ -1,0 +1,84 @@
+div#home-page {
+    /* dimensions */
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div#home-page form {
+    /* content */
+    display: flex;
+    flex-direction: column;
+    /* dimensions */
+    padding: 20px 10px 0px;
+    max-width: 380px;
+    width: 100%;
+}
+
+div#home-page form#ticket-form {
+    /* initial values */
+    opacity: 0;
+    margin-top: 80px;
+
+    /* animation */
+    transition: opacity 800ms ease, margin-top 800ms ease;
+    -o-transition: opacity 800ms ease, margin-top 800ms ease;
+    -ms-transition: opacity 800ms ease, margin-top 800ms ease;
+    -moz-transition: opacity 800ms ease, margin-top 800ms ease;
+    -webkit-transition: opacity 800ms ease, margin-top 800ms ease;
+}
+
+div#home-page form label {
+    /* dimensions */
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #303030;
+}
+
+div#home-page form input, form textarea, form select {
+    /* dimensions */
+    width: 100% !important;
+    margin-top: 5px !important;
+    padding: 8px 10px;
+    font-size: 12pt;
+    /* shape */
+    border-radius: 5px;
+    /* other */
+    border: none;
+    background-color: #00000010;
+    resize: none;
+    font-family: sans-serif;
+    color: #303030;
+    border: 1px solid #30303000;
+
+    -webkit-appearance: none;
+}
+
+div#home-page form input:focus, form textarea:focus, form select:focus {
+    outline: none;
+    border: 1px solid #30303055;
+}
+
+div#home-page form input[type=submit] {
+    margin-top: 25px !important;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #00000025;
+    /* text-transform: uppercase; */
+    /* background-color: #57cc99; */
+    background-color: #57cc99;
+    color: #454545;
+
+}
+
+div#home-page form input[type=submit]:hover {
+    background-color: #57ccA0;
+
+}
+
+
+div#home-page form input[type=submit]:active {
+    color: black;
+}
