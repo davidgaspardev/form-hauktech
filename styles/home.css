@@ -97,6 +97,10 @@ div#home-page form input[type=submit] {
 
 }
 
+div#home-page form input[type=submit]:focus {
+    border: none;
+}
+
 div#home-page form input[type=submit]:hover {
     background-color: #57ccA0;
 
