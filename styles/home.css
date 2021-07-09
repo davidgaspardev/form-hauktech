@@ -12,9 +12,15 @@ div#home-page {
     div#home-page {
         flex-direction: column;
     }
+
+    div#home-page img#logo-img {
+        margin-left: 0px;
+    }
 }
 
 div#home-page img#logo-img {
+    margin-left: 60px;
+
     /* initial values */
     opacity: 0;
     margin-bottom: 80px;
@@ -32,7 +38,7 @@ div#home-page form {
     display: flex;
     flex-direction: column;
     /* dimensions */
-    padding: 20px 10px 0px;
+    padding: 20px 10px;
     max-width: 380px;
     width: 100%;
 }
