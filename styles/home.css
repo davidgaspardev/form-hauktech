@@ -8,6 +8,19 @@ div#home-page {
     flex-direction: row-reverse;
 }
 
+div#home-page img#logo-img {
+    /* initial values */
+    opacity: 0;
+    margin-bottom: 80px;
+
+    /* animation */
+    transition: opacity 800ms ease, margin-bottom 800ms ease;
+    -o-transition: opacity 800ms ease, margin-bottom 800ms ease;
+    -ms-transition: opacity 800ms ease, margin-bottom 800ms ease;
+    -moz-transition: opacity 800ms ease, margin-bottom 800ms ease;
+    -webkit-transition: opacity 800ms ease, margin-bottom 800ms ease;
+}
+
 div#home-page form {
     /* content */
     display: flex;

@@ -87,6 +87,19 @@ export default function HomePage(): JSX.Element {
 }
 
 /**
+ * Get img element
+ * 
+ * @returns {HTMLImageElement}
+ */
+function _getImgElement(): HTMLImageElement {
+  const img = document.getElementById("logo-img");
+
+  if(!img) throw Error("Doesn't exists img element");
+
+  return img as HTMLImageElement;
+}
+
+/**
  * Get form element
  * 
  * @returns {HTMLFormElement}
@@ -126,10 +139,14 @@ function _addPhoneFormatToInput(id: string): void {
 function formSetup(): void {
 
   const form = _getFormElement();
+  const logo = _getImgElement();
 
   // Animation to show the form
   form.style.opacity = "1";
   form.style.marginTop = "0";
+  // Animation to show the logo
+  logo.style.opacity = "1";
+  logo.style.marginBottom = "0";
 
   // Set input forma number to phone
   _addPhoneFormatToInput("input-phone");
