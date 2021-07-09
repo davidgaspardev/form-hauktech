@@ -8,6 +8,12 @@ div#home-page {
     flex-direction: row-reverse;
 }
 
+@media only screen and (max-width: 700px) {
+    div#home-page {
+        flex-direction: column;
+    }
+}
+
 div#home-page img#logo-img {
     /* initial values */
     opacity: 0;
