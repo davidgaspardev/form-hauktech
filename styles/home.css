@@ -110,6 +110,12 @@ div#home-page form input[type=submit] {
 
 }
 
+div#home-page form input[type=submit] {
+    width: 200px !important;
+    border-radius: 30px;
+    margin-left: calc(100% - 200px);
+}
+
 div#home-page form input[type=submit]:focus {
     border: none;
 }
