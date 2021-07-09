@@ -19,6 +19,12 @@ export default function HomePage(): JSX.Element {
         <title>Hauktech</title>
       </Head>
 
+      <img 
+        id="logo-img"
+        src="/images/png/logo.png"
+        width={300}
+        alt="Logo" />
+
       <form id="ticket-form" className="container" >
 
         { /** Company field */ }
