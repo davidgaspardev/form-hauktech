@@ -17,12 +17,12 @@ export default function HomePage(): JSX.Element {
     <div id="home-page" >
       <Head>
         <title>Hauktech</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
       </Head>
 
       <img 
         id="logo-img"
         src="/images/png/logo.png"
-        width={300}
         alt="Logo" />
 
       <form id="ticket-form" className="container" >
