@@ -38,7 +38,7 @@ export default function HomePage(): JSX.Element {
           id="input-company"
           name="company" 
           type="text" 
-          placeholder="Hauktech"
+          placeholder="Ex: Hauktech"
           required={true} />
 
         { /** Contributor field */ }
@@ -47,7 +47,7 @@ export default function HomePage(): JSX.Element {
           id="input-contributor"
           name="contributor" 
           type="text" 
-          placeholder="Rafael Sousa"
+          placeholder="Ex: Rafael Sousa"
           required={true}  />
 
         { /** Email field */ }
@@ -56,7 +56,7 @@ export default function HomePage(): JSX.Element {
           id="input-email"
           name="email" 
           type="email" 
-          placeholder="contato@hauktech.com"
+          placeholder="Ex: rafael.sousa@hauktech.com"
           required={true}  />
 
         { /** Phone field */ }
@@ -75,7 +75,7 @@ export default function HomePage(): JSX.Element {
           id="input-issue"
           name="issue" 
           rows={5} 
-          placeholder="Erro no windows, message de erro: Falha no ..."
+          placeholder='Ex: Erro no Windows, aparece a seguinte mensagem "Falha no ...'
           required={true}  />
 
         { /** Priority field */ }
