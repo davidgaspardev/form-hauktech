@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Image from 'next/image';
 import { useEffect } from 'react';
 import { init, sendForm } from 'emailjs-com';
 
@@ -21,10 +22,14 @@ export default function HomePage(): JSX.Element {
       </Head>
 
       <div id="content" >
-        <img 
-          id="logo-img"
-          src="/images/png/logo.png"
-          alt="Logo" />
+
+          <div id="logo-img" >
+            <Image 
+              src="/images/png/logo.png"
+              alt="Logo"
+              width={300}
+              height={112} />
+          </div>
 
           <h3>Abra seu chamado aqui para <strong>Hauktech</strong>.</h3>
           <p>Por favor preencha todas as informações solicitadas corretamente para a abertura do chamado, descrevendo com detalhes o motivo do seu contato.</p>
@@ -90,9 +95,9 @@ export default function HomePage(): JSX.Element {
           className="form-field"
           name="priority"
           required={true}  >
-          <option value="low" >baixa</option>
-          <option value="regular" >média</option>
-          <option value="high" >alta</option>
+          <option value="baixa" >Baixa</option>
+          <option value="normal" >Normal</option>
+          <option value="alta" >Alta</option>
         </select>
 
         { /** Submit button */ }  
