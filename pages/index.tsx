@@ -20,10 +20,15 @@ export default function HomePage(): JSX.Element {
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
       </Head>
 
-      <img 
-        id="logo-img"
-        src="/images/png/logo.png"
-        alt="Logo" />
+      <div id="content" >
+        <img 
+          id="logo-img"
+          src="/images/png/logo.png"
+          alt="Logo" />
+
+          <h3>Abra seu chamado aqui para <strong>Hauktech</strong>.</h3>
+          <p>Por favor preencha todas as informações solicitadas corretamente para a abertura do chamado, descrevendo com detalhes o motivo do seu contato.</p>
+      </div>
 
       <form id="ticket-form" className="container" >
 
@@ -109,12 +114,12 @@ export default function HomePage(): JSX.Element {
  * 
  * @returns {HTMLImageElement}
  */
-function _getImgElement(): HTMLImageElement {
-  const img = document.getElementById("logo-img");
+function _getContentElement(): HTMLImageElement {
+  const content = document.getElementById("content");
 
-  if(!img) throw Error("Doesn't exists img element");
+  if(!content) throw Error("Doesn't exists img element");
 
-  return img as HTMLImageElement;
+  return content as HTMLImageElement;
 }
 
 /**
@@ -204,7 +209,7 @@ function showWarning(message: string, callback: Function, failed?: boolean): voi
 function formSetup(): void {
 
   const form = _getFormElement();
-  const logo = _getImgElement();
+  const logo = _getContentElement();
 
   // Animation to show the form
   form.style.opacity = "1";
