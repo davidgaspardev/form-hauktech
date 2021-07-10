@@ -188,6 +188,8 @@ div#warning > div {
     background-color: white;
     /* shape */
     border-radius: 8px;
+    /* content */
+    text-align: center;
 }
 
 div#warning > div header {
