@@ -117,7 +117,7 @@ div#home-page form input, form textarea, form select {
 }
 
 div#home-page form textarea {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 div#home-page form input:focus, form textarea:focus, form select:focus {
