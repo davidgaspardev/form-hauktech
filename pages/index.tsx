@@ -101,7 +101,10 @@ export default function HomePage(): JSX.Element {
         </select>
 
         { /** Submit button */ }  
-        <input type="submit" value="enviar chamado" />
+        <input
+          className="form-field" 
+          type="submit" 
+          value="enviar chamado" />
 
       </form>
 
