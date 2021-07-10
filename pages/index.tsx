@@ -36,6 +36,7 @@ export default function HomePage(): JSX.Element {
         <label htmlFor="input-company" >Nome da empresa</label>
         <input
           id="input-company"
+          className="form-field"
           name="company" 
           type="text" 
           placeholder="Ex: Hauktech"
@@ -45,6 +46,7 @@ export default function HomePage(): JSX.Element {
         <label htmlFor="input-contributor" >Colaborador</label>
         <input 
           id="input-contributor"
+          className="form-field"
           name="contributor" 
           type="text" 
           placeholder="Ex: Rafael Sousa"
@@ -54,6 +56,7 @@ export default function HomePage(): JSX.Element {
         <label htmlFor="input-email" >Email para contato</label>
         <input 
           id="input-email"
+          className="form-field"
           name="email" 
           type="email" 
           placeholder="Ex: rafael.sousa@hauktech.com"
@@ -63,6 +66,7 @@ export default function HomePage(): JSX.Element {
         <label htmlFor="input-phone" >Telefone para contato</label>
         <input 
           id="input-phone"
+          className="form-field"
           name="phone" 
           type="text" 
           maxLength={15}
@@ -73,6 +77,7 @@ export default function HomePage(): JSX.Element {
         <label htmlFor="input-issue" >Problema</label>
         <textarea 
           id="input-issue"
+          className="form-field"
           name="issue" 
           rows={5} 
           placeholder='Ex: Erro no Windows, aparece a seguinte mensagem "Falha no ...'
@@ -81,7 +86,8 @@ export default function HomePage(): JSX.Element {
         { /** Priority field */ }
         <label htmlFor="select-priority" >Prioridade</label>
         <select
-          id="select-priority" 
+          id="select-priority"
+          className="form-field"
           name="priority"
           required={true}  >
           <option value="low" >baixa</option>
@@ -204,6 +210,24 @@ function showWarning(message: string, callback: Function, failed?: boolean): voi
 }
 
 /**
+ * To block fields
+ */
+function disableFormFields(): void {
+  const fields = document.getElementsByClassName("form-field");
+
+  for(let i = 0; i < fields.length; i++) (fields[i] as HTMLInputElement).disabled = true;
+}
+
+/**
+ * To unlock fields
+ */
+function enableFormFields(): void {
+  const fields = document.getElementsByClassName("form-field");
+
+  for(let i = 0; i < fields.length; i++) (fields[i] as HTMLInputElement).disabled = false;
+}
+
+/**
  * Configuring form
  */
 function formSetup(): void {
@@ -229,13 +253,9 @@ function formSetup(): void {
 
     if(!ev.defaultPrevented) ev.preventDefault();
 
-    const formData = new FormData(this);
-    console.log("company:", formData.get("company"));
-    console.log("contributor:", formData.get("contributor"));
-    console.log("email:", formData.get("email"));
-    console.log("phone:", formData.get("phone"));
-    console.log("issue:", formData.get("issue"));
-    console.log("priority:", formData.get("priority"));
+    disableFormFields();
+
+    // const formData = new FormData(this);
 
     // Using EmailJS to send the form
     // Initilizing EmailJS package
@@ -250,9 +270,7 @@ function formSetup(): void {
 
       });
     }).catch((error: Error) => {
-      showWarning(error.message, () => {
-
-      }, true);
+      showWarning(error.message, enableFormFields, true);
     });
   });
 }
