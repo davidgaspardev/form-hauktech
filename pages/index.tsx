@@ -33,7 +33,8 @@ export default function HomePage(): JSX.Element {
           id="input-company"
           name="company" 
           type="text" 
-          placeholder="Hauktech" />
+          placeholder="Hauktech"
+          required={true} />
 
         { /** Contributor field */ }
         <label htmlFor="input-contributor" >Colaborador</label>
@@ -41,7 +42,8 @@ export default function HomePage(): JSX.Element {
           id="input-contributor"
           name="contributor" 
           type="text" 
-          placeholder="Rafael Sousa" />
+          placeholder="Rafael Sousa"
+          required={true}  />
 
         { /** Email field */ }
         <label htmlFor="input-email" >Email para contato</label>
@@ -49,7 +51,8 @@ export default function HomePage(): JSX.Element {
           id="input-email"
           name="email" 
           type="text" 
-          placeholder="contato@hauktech.com" />
+          placeholder="contato@hauktech.com"
+          required={true}  />
 
         { /** Phone field */ }
         <label htmlFor="input-phone" >Telefone para contato</label>
@@ -58,7 +61,8 @@ export default function HomePage(): JSX.Element {
           name="phone" 
           type="text" 
           maxLength={15}
-          placeholder="(DDD) 9XXXX-XXXXXX" />
+          placeholder="(DDD) 9XXXX-XXXXXX"
+          required={true}  />
 
         { /** Issue field */ }
         <label htmlFor="input-issue" >Problema</label>
@@ -66,13 +70,15 @@ export default function HomePage(): JSX.Element {
           id="input-issue"
           name="issue" 
           rows={5} 
-          placeholder="Erro no windows, message de erro: Falha no ..." />
+          placeholder="Erro no windows, message de erro: Falha no ..."
+          required={true}  />
 
         { /** Priority field */ }
         <label htmlFor="select-priority" >Prioridade</label>
         <select
           id="select-priority" 
-          name="priority" >
+          name="priority"
+          required={true}  >
           <option value="low" >baixa</option>
           <option value="regular" >média</option>
           <option value="high" >alta</option>
