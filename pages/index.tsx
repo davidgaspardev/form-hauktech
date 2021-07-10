@@ -261,8 +261,6 @@ function formSetup(): void {
 
     if(!ev.defaultPrevented) ev.preventDefault();
 
-    disableFormFields();
-
     // const formData = new FormData(this);
 
     // Using EmailJS to send the form
@@ -280,5 +278,7 @@ function formSetup(): void {
     }).catch((error: Error) => {
       showWarning(error.message, enableFormFields, true);
     });
+
+    setTimeout(disableFormFields, 100);
   });
 }
