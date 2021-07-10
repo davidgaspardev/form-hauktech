@@ -129,3 +129,54 @@ div#home-page form input[type=submit]:hover {
 div#home-page form input[type=submit]:active {
     color: black;
 }
+
+/* ================== WARNING ================== */
+
+div#warning {
+    /* position*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    /* content */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    /* others */
+    background-color: #00000055;
+    /* animation */
+    transition: opacity 750ms ease;
+    -o-transition: opacity 750ms ease;
+    -ms-transition: opacity 750ms ease;
+    -moz-transition: opacity 750ms ease;
+    -webkit-transition: opacity 750ms ease;
+}
+
+div#warning > div {
+    /* dimension */
+    width: 300px;
+    /* others */
+    background-color: white;
+    /* shape */
+    border-radius: 8px;
+}
+
+div#warning > div header {
+    /* content */
+    color: white;
+    /* dimensions */
+    padding: 15px 10px;
+    /* shape */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+div#warning > div div {
+    /* content */
+    color: #454545;
+    /* dimension */
+    padding: 10px;
+}

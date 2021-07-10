@@ -50,7 +50,7 @@ export default function HomePage(): JSX.Element {
         <input 
           id="input-email"
           name="email" 
-          type="text" 
+          type="email" 
           placeholder="contato@hauktech.com"
           required={true}  />
 
@@ -88,6 +88,18 @@ export default function HomePage(): JSX.Element {
         <input type="submit" value="enviar chamado" />
 
       </form>
+
+      <div id="warning" >
+        <div>
+          <header>
+            <h1></h1>
+          </header>
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
@@ -119,6 +131,19 @@ function _getFormElement(): HTMLFormElement {
 }
 
 /**
+ * Get wanring element
+ * 
+ * @returns {HTMLFormElement}
+ */
+ function _getWarningElement(): HTMLDivElement {
+  const warning = document.getElementById("warning");
+
+  if(!warning) throw Error("Doesn't exists form element");
+
+  return warning as HTMLDivElement;
+}
+
+/**
  * Formating input data to the phone number
  * 
  * @param {string} id 
@@ -137,6 +162,40 @@ function _addPhoneFormatToInput(id: string): void {
       this.value = value;
     }
   });
+}
+
+/**
+ * Show message
+ * 
+ * @param {string} message 
+ */
+function showWarning(message: string, callback: Function, failed?: boolean): void {
+  // Getting wanring element
+  const warning = _getWarningElement();
+
+  // Config content
+  const title = warning.getElementsByTagName("h1")[0];
+  const header = warning.getElementsByTagName("header")[0];
+  const paragraph = warning.getElementsByTagName("p")[0];
+  title.innerText = failed ?  "Algo deu errado" : "Tudo certo";
+  paragraph.innerText = message;
+  header.style.background = failed ? "#ff6562" : "#00c07f";
+
+  // Show warning
+  warning.style.display = "flex";
+  setTimeout(() => {
+    warning.style.opacity = "1";
+  }, 100);
+
+  setTimeout(() => {
+    // Hide wanring
+    warning.style.opacity = "0";
+    setTimeout(() => {
+      // Block warning
+      warning.style.display = "none";
+      if(callback) callback();
+    }, 750);
+  }, 5000);
 }
 
 /**
@@ -159,11 +218,13 @@ function formSetup(): void {
 
   // Adding event listener on form submission
   form.addEventListener("submit", function(this: HTMLFormElement, ev: Event) {
+    // MDN Web Docs provides high quality content and one of them is the form validation 
+    // done by the client side.
+    // See the documentation here: https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
+
     if(!ev.defaultPrevented) ev.preventDefault();
 
     const formData = new FormData(this);
-
-    console.log(formData);
     console.log("company:", formData.get("company"));
     console.log("contributor:", formData.get("contributor"));
     console.log("email:", formData.get("email"));
@@ -179,6 +240,14 @@ function formSetup(): void {
       process.env.EMAIL_JS_SERVICE || '', 
       process.env.EMAIL_JS_TEMPLATE || '', 
       this
-    );
+    ).then(() => {
+      showWarning("Agora é só aguardar nosso retorno", () => {
+
+      });
+    }).catch((error: Error) => {
+      showWarning(error.message, () => {
+
+      }, true);
+    });
   });
 }
