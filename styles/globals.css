@@ -19,4 +19,7 @@ a {
 :root {
   --color-primary: #383C47;
   --color-secondary: #75787F;
+
+  --color-teamviewer: #0E8EE9;
+  --color-anydesk: #EF443B;
 }

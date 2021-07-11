@@ -119,6 +119,38 @@ export default function HomePage(): JSX.Element {
         </div>
       </div>
 
+      <footer>
+
+        { /** Team Viewer button (link) */}
+        <div 
+          className="floating-button" 
+          style={{ backgroundColor: "var(--color-teamviewer)", right: 170 }}
+          onClick={() => window.open('https://www.teamviewer.com/pt-br/')} >
+            <Image 
+              src={"/images/png/teamviewer.png"}
+              alt="TeamViewer"
+              width={24}
+              height={24}/>
+
+          <h6><strong>Team</strong>Viewer</h6>
+        </div>
+
+        { /** AnyDesk button (link) */ }
+        <div 
+          className="floating-button" 
+          style={{ backgroundColor: "var(--color-anydesk)" }}
+          onClick={() => window.open('https://anydesk.com/pt')} >
+          <Image 
+            src={"/images/png/anydesk.png"}
+            alt="AnyDesk"
+            width={24}
+            height={24} />
+
+          <h6><strong>AnyDesk</strong></h6>
+        </div>
+        
+      </footer>
+
     </div>
   );
 }
@@ -235,6 +267,14 @@ function enableFormFields(): void {
   for(let i = 0; i < fields.length; i++) (fields[i] as HTMLInputElement).disabled = false;
 }
 
+function showFloatingButton() {
+  const buttons = document.getElementsByClassName("floating-button");
+
+  for(let i = 0; i < buttons.length; i++) {
+    (buttons.item(i) as HTMLElement).style.bottom = "0";
+  }
+}
+
 /**
  * Configuring form
  */
@@ -249,6 +289,8 @@ function formSetup(): void {
   // Animation to show the logo
   logo.style.opacity = "1";
   logo.style.marginBottom = "0";
+
+  setTimeout(showFloatingButton, 800);
 
   // Set input forma number to phone
   _addPhoneFormatToInput("input-phone");

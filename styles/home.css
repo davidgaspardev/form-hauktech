@@ -27,6 +27,10 @@ div#home-page {
     div#home-page form {
         padding: 25px 20px !important;
     }
+
+    div#home-page div.floating-button {
+        position: initial !important;
+    }
 }
 
 /* ================== CONTENT ================== */
@@ -154,6 +158,49 @@ div#home-page form input[type=submit]:hover {
 
 div#home-page form input[type=submit]:active {
     color: black;
+}
+
+/* ================== FOOTER ================== */
+
+div#home-page footer {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+/* ================== FLOATING BUTTON ================== */
+
+div#home-page div.floating-button {
+    /* positon */
+    position: fixed;
+    right: 0;
+    bottom: -52px;
+    z-index: 5;
+    /* dimensions */
+    width: 150px;
+    height: 40px;
+    margin: 12px;
+    /* shape */
+    border-radius: 5px;
+    /* content */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* animation */
+    transition: bottom 800ms ease;
+    -o-transition: bottom 800ms ease;
+    -ms-transition: bottom 800ms ease;
+    -moz-transition: bottom 800ms ease;
+    -webkit-transition: bottom 800ms ease;
+}
+
+div#home-page div.floating-button h6 {
+    font-weight: normal;
+    color: white;
+    padding-left: 8px;
+    font-size: 11pt;
 }
 
 /* ================== WARNING ================== */
