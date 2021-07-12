@@ -141,7 +141,7 @@ export default function HomePage(): JSX.Element {
         <div 
           className="floating-button" 
           style={{ backgroundColor: "var(--color-teamviewer)", right: 170 }}
-          onClick={() => window.open('https://www.teamviewer.com/pt-br/')} >
+          onClick={() => window.open('https://download.teamviewer.com/download/TeamViewer_Setup.exe')} >
             <Image 
               src={"/images/png/teamviewer.png"}
               alt="TeamViewer"
@@ -155,7 +155,7 @@ export default function HomePage(): JSX.Element {
         <div 
           className="floating-button" 
           style={{ backgroundColor: "var(--color-anydesk)" }}
-          onClick={() => window.open('https://anydesk.com/pt')} >
+          onClick={() => window.open('https://download.anydesk.com/AnyDesk.exe?_ga=2.162000511.278864080.1626013457-905383703.1626013457')} >
           <Image 
             src={"/images/png/anydesk.png"}
             alt="AnyDesk"
