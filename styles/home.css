@@ -129,21 +129,13 @@ div#home-page form input:focus, form textarea:focus, form select:focus {
 }
 
 div#home-page form input[type=submit] {
-    margin-top: 25px !important;
-    padding: 15px;
     cursor: pointer;
-    background-color: #00000025;
-    /* text-transform: uppercase; */
-    /* background-color: #57cc99; */
     background-color: #57cc99;
     color: #454545;
-
-}
-
-div#home-page form input[type=submit] {
-    width: 200px !important;
-    border-radius: 30px;
-    margin-left: calc(100% - 200px);
+    width: 180px !important;
+    height: 40px;
+    padding: 0px;
+    border-radius: 10px;
 }
 
 div#home-page form input[type=submit]:focus {
@@ -152,12 +144,34 @@ div#home-page form input[type=submit]:focus {
 
 div#home-page form input[type=submit]:hover {
     background-color: #57ccA0;
-
 }
 
 
 div#home-page form input[type=submit]:active {
     color: black;
+}
+
+div#home-page form div.footer-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div#home-page form div.footer-form label {
+    font-size: 10pt;
+    font-weight: normal;
+    text-decoration: underline;
+    color: var(--color-primary);
+    cursor: pointer;
+    margin-left: 10px;
+    opacity: 0;
+}
+
+div#home-page form div.footer-form label span {
+    font-size: 7pt;
+    color: var(--color-secondary);
 }
 
 /* ================== FOOTER ================== */

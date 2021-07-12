@@ -100,11 +100,27 @@ export default function HomePage(): JSX.Element {
           <option value="alta" >Alta</option>
         </select>
 
-        { /** Submit button */ }  
-        <input
-          className="form-field" 
-          type="submit" 
-          value="enviar chamado" />
+        <div className="footer-form" >
+          <input 
+            id="input-files"
+            type="file" 
+            name="files" 
+            accept="image/png, image/jpeg, video/mp4"
+            size={20971520} // 20 MB 
+            style={{ display: "none" }}
+            multiple={true}
+            />
+
+          <label 
+            // onClick={() => document.getElementById("input-files")?.click()}
+            htmlFor="input-files" >Adicionar arquivos<br/><span>images ou videos</span></label>
+
+          { /** Submit button */ }
+          <input
+            className="form-field" 
+            type="submit" 
+            value="enviar chamado" />
+        </div>
 
       </form>
 
@@ -148,7 +164,7 @@ export default function HomePage(): JSX.Element {
 
           <h6><strong>AnyDesk</strong></h6>
         </div>
-        
+
       </footer>
 
     </div>
